@@ -1,15 +1,20 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "csmt-pdf"
 version = "0.1.0"
-description = "A lean command-line PDF utility"
+description = "A lean terminal-based PDF utility"
+readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "pypdf",
+    "pypdf>=6.19",
+    "Pillow>=10",
 ]
 
 [project.scripts]
 csmt-pdf = "csmt_pdf.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
